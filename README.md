@@ -5,6 +5,7 @@
 Ken All は、郵便番号で住所を検索できる npm パッケージです。
 
 ![npm](https://badge.fury.io/js/ken-all.svg)
+[![CircleCI](https://circleci.com/gh/numb86/ken-all.svg?style=svg)](https://circleci.com/gh/numb86/ken-all)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 ```js
