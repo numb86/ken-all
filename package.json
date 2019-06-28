@@ -36,7 +36,7 @@
     "type-check:src": "tsc src/*.ts --noEmit",
     "type-check:generateCsv": "tsc generateCsv/*.ts --noEmit",
     "generate-csv": "ts-node generateCsv/index.ts",
-    "prepublishOnly": "build"
+    "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
