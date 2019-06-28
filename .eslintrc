@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "numb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "mocha": true
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".ts",
+          ".js"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "import/no-unresolved": ["error", {"commonjs": false}],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      {"allowTypedFunctionExpressions": true}
+    ],
+    "@typescript-eslint/no-var-requires": "off"
+  }
+}

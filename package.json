@@ -1,0 +1,60 @@
+{
+  "name": "ken-all",
+  "version": "0.1.0",
+  "description": "Ken All は、郵便番号で住所を検索できる npm パッケージです。",
+  "keywords": [
+    "postcode",
+    "zipcode",
+    "ken-all"
+  ],
+  "homepage": "https://github.com/numb86/ken-all",
+  "bugs": {
+    "url": "https://github.com/numb86/ken-all/issues"
+  },
+  "author": {
+    "name": "numb_86",
+    "url": "https://github.com/numb86"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/numb86/ken-all.git"
+  },
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "mkdir -p ./dist && rm -rf dist/* && yarn && tsc -p .",
+    "lint": "run-p lint:*",
+    "lint:src": "eslint --ext .ts src/",
+    "lint:generateCsv": "eslint --ext .ts generateCsv/",
+    "lint:test": "eslint --ext .ts test/",
+    "test": "mocha --require espower-typescript/guess test/**/*.ts",
+    "type-check": "run-p type-check:*",
+    "type-check:src": "tsc src/*.ts --noEmit",
+    "type-check:generateCsv": "tsc generateCsv/*.ts --noEmit",
+    "generate-csv": "ts-node generateCsv/index.ts",
+    "prepublishOnly": "build"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^5.16.0",
+    "eslint-config-numb": "^6.0.0",
+    "espower-typescript": "^9.0.2",
+    "iconv-lite": "^0.4.24",
+    "mocha": "^6.1.4",
+    "npm-run-all": "^4.1.5",
+    "power-assert": "^1.6.1",
+    "ts-node": "^8.3.0"
+  },
+  "dependencies": {
+    "@types/node": "^12.0.10",
+    "es6-promise": "^4.2.8",
+    "fetch-ponyfill": "^6.1.0",
+    "typescript": "^3.5.2"
+  }
+}
