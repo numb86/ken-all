@@ -25,6 +25,9 @@ jobs:
       - run:
           name: Run Type Check
           command: yarn type-check
+      - run:
+          name: Run Commitlint
+          command: yarn run commitlint
       - save_cache:
           paths:
             - node_modules
