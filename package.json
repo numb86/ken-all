@@ -37,9 +37,12 @@
     "type-check:generateCsv": "tsc generateCsv/*.ts --noEmit",
     "generate-csv": "ts-node generateCsv/index.ts",
     "release": "standard-version",
+    "commitlint": "commitlint --from=master",
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@types/mocha": "^5.2.7",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
