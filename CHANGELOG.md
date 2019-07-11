@@ -1,5 +1,7 @@
-# CHANGELOG
+# Changelog
 
-## 0.1.0 (2019/06/28)
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-- Release
+## 0.1.0 (2019-06-28)
+
+* Release
