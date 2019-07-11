@@ -36,6 +36,7 @@
     "type-check:src": "tsc src/*.ts --noEmit",
     "type-check:generateCsv": "tsc generateCsv/*.ts --noEmit",
     "generate-csv": "ts-node generateCsv/index.ts",
+    "release": "standard-version",
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
