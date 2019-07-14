@@ -37,7 +37,7 @@
     "type-check:generateCsv": "tsc generateCsv/*.ts --noEmit",
     "generate-csv": "ts-node generateCsv/index.ts",
     "release": "standard-version",
-    "commitlint": "commitlint --from=master",
+    "commitlint": "git describe --abbrev=0 --tags | xargs -I@ commitlint --from=@",
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
