@@ -44,12 +44,12 @@
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@types/mocha": "^5.2.7",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
     "eslint": "^5.16.0",
     "eslint-config-numb": "^6.0.0",
     "espower-typescript": "^9.0.2",
-    "iconv-lite": "^0.4.24",
+    "iconv-lite": "^0.5.0",
     "mocha": "^6.1.4",
     "npm-run-all": "^4.1.5",
     "power-assert": "^1.6.1",
@@ -57,9 +57,9 @@
     "ts-node": "^8.3.0"
   },
   "dependencies": {
-    "@types/node": "^12.0.10",
+    "@types/node": "^12.6.2",
     "es6-promise": "^4.2.8",
     "fetch-ponyfill": "^6.1.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   }
 }
