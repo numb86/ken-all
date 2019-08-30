@@ -2,7 +2,7 @@
   "types": [
     {"type":"feat","section":"Features"},
     {"type":"fix","section":"Bug Fixes"},
-    {"type":"pref","section":"Performances"},
+    {"type":"perf","section":"Performances"},
     {"type":"deps","section":"Dependencies"}
   ]
 }
