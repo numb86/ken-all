@@ -67,9 +67,10 @@ KenAll('9009999').then(res => console.log(res));
 
 ＊以下のサンプルは、シンプルにするために複数の住所が返ってきたケースを考慮していません
 
-## React （バージョン`16.8.6`で確認）
+## React
 
 ```js
+// React のバージョン 16.10.2 で確認
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import KenAll from 'ken-all';
@@ -106,11 +107,12 @@ const App = () => {
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
-## Vue （バージョン`2.6.10`で確認）
+## Vue
 
 エントリポイント。
 
 ```js
+// Vue のバージョン 2.6.10 で確認
 import Vue from 'vue';
 
 import App from './components/App.vue';
@@ -163,13 +165,53 @@ export default {
 </script>
 ```
 
-## Node.js （バージョン`8.16.0`で確認）
+## Node.js
 
 ```js
+// Node.js のバージョン 12.10.0 で確認
 const KenAll = require('ken-all').default;
 
 // [ [ '東京都', '千代田区', '永田町' ] ]
 KenAll('1000014').then(res => console.log(res));
+```
+
+## script タグを使った読み込み
+
+`0.2.0`以降のバージョンは`https://unpkg.com/ken-all@{バージョン番号}/umd/index.js`で読み込めます。  
+読み込み後、`KenAll.default`という形で利用できます。
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Ken All Sample</title>
+</head>
+<body>
+  <div id="app"></div>
+  <input id="post-code" maxlength="7">
+  <p id="result"></p>
+  <script src="https://unpkg.com/ken-all@0.2.0/umd/index.js"></script>
+  <script>
+    const searchBoxElem = document.querySelector('#post-code');
+
+    searchBoxElem.addEventListener('input', e => {
+      const postCode = e.currentTarget.value;
+
+      if (postCode.length === 7) {
+        const resultTextElem = document.querySelector('#result');
+        KenAll.default(postCode).then(res => {
+          if (res.length === 0) {
+            resultTextElem.textContent = '該当する住所はありません';
+          } else {
+            resultTextElem.textContent = res[0].join(' ');
+          }
+        });
+      }
+    }, false);
+  </script>
+</body>
+</html>
 ```
 
 # 元データ
