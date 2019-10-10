@@ -190,6 +190,7 @@ KenAll('1000014').then(res => console.log(res));
 <body>
   <input id="post-code" maxlength="7">
   <p id="result"></p>
+
   <script src="https://unpkg.com/ken-all@0.2.0/umd/index.js"></script>
   <script>
     const searchBoxElem = document.querySelector('#post-code');
