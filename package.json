@@ -1,6 +1,6 @@
 {
   "name": "ken-all",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Ken All は、郵便番号で住所を検索できる npm パッケージです。",
   "keywords": [
     "postcode",
