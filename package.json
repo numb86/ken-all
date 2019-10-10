@@ -25,12 +25,14 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "esm"
+    "esm",
+    "umd"
   ],
   "scripts": {
-    "build": "run-p build:*",
-    "build:cjs": "mkdir -p ./dist && rm -rf dist/* && yarn && tsc -p ./tsconfig.cjs.json",
-    "build:esm": "mkdir -p ./esm && rm -rf esm/* && yarn && tsc -p ./tsconfig.esm.json",
+    "build": "yarn && run-p build:*",
+    "build:cjs": "mkdir -p ./dist && rm -rf dist/* && tsc -p ./tsconfig.cjs.json",
+    "build:esm": "mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
+    "build:umd": "mkdir -p ./umd && rm -rf umd/* && webpack --mode=production",
     "lint": "run-p lint:*",
     "lint:src": "eslint --ext .ts src/",
     "lint:generateCsv": "eslint --ext .ts generateCsv/",

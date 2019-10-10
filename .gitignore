@@ -1,3 +1,4 @@
 /dist
 /esm
+/umd
 /node_modules
