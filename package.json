@@ -21,12 +21,18 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
+  "module": "./esm/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "esm",
+    "umd"
   ],
   "scripts": {
-    "build": "mkdir -p ./dist && rm -rf dist/* && yarn && tsc -p .",
+    "build": "yarn && run-p build:*",
+    "build:cjs": "mkdir -p ./dist && rm -rf dist/* && tsc -p ./tsconfig.cjs.json",
+    "build:esm": "mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
+    "build:umd": "mkdir -p ./umd && rm -rf umd/* && webpack --mode=production",
     "lint": "run-p lint:*",
     "lint:src": "eslint --ext .ts src/",
     "lint:generateCsv": "eslint --ext .ts generateCsv/",
@@ -54,7 +60,10 @@
     "npm-run-all": "^4.1.5",
     "power-assert": "^1.6.1",
     "standard-version": "^6.0.1",
-    "ts-node": "^8.3.0"
+    "ts-loader": "^6.2.0",
+    "ts-node": "^8.3.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   },
   "dependencies": {
     "@types/node": "^12.7.8",
