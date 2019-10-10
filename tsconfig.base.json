@@ -2,10 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["es2018", "dom"],
-    "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "outDir": "./dist/",
     "declaration": true,
     "skipLibCheck": true,
     "sourceMap": true
