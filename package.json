@@ -21,12 +21,16 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
+  "module": "./esm/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "esm"
   ],
   "scripts": {
-    "build": "mkdir -p ./dist && rm -rf dist/* && yarn && tsc -p ./tsconfig.cjs.json",
+    "build": "run-p build:*",
+    "build:cjs": "mkdir -p ./dist && rm -rf dist/* && yarn && tsc -p ./tsconfig.cjs.json",
+    "build:esm": "mkdir -p ./esm && rm -rf esm/* && yarn && tsc -p ./tsconfig.esm.json",
     "lint": "run-p lint:*",
     "lint:src": "eslint --ext .ts src/",
     "lint:generateCsv": "eslint --ext .ts generateCsv/",
