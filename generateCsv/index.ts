@@ -4,8 +4,7 @@ import generateAddressDictionary, {
 } from './addressDictionary';
 import readCsv from './readCsv';
 
-const {promisify} = require('util');
-const fs = require('fs');
+const fs = require('fs').promises;
 
 const CSV_OUTPUT_PATH = './docs/csv/';
 
@@ -27,9 +26,7 @@ const writeCsv = (dictionary: AddressDictionary): void => {
 
   dictionary.forEach((value: Address[], key: string): void => {
     const content = createCsvContent(value);
-    promiseList.push(
-      promisify(fs.writeFile)(`${CSV_OUTPUT_PATH}${key}.csv`, content)
-    );
+    promiseList.push(fs.writeFile(`${CSV_OUTPUT_PATH}${key}.csv`, content));
   });
 
   /* eslint-disable no-console */
