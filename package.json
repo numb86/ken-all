@@ -7,6 +7,10 @@
     "zipcode",
     "ken-all"
   ],
+  "engines": {
+    "node": ">=12.13.0",
+    "yarn": ">=1.19.0"
+  },
   "homepage": "https://github.com/numb86/ken-all",
   "bugs": {
     "url": "https://github.com/numb86/ken-all/issues"
