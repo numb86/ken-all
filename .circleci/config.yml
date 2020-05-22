@@ -15,7 +15,7 @@ jobs:
           command: sudo npm i -g yarn@1.19.0
       - run:
           name: Install Packages
-          command: yarn install
+          command: yarn --frozen-lockfile
       - run:
           name: Run Test
           command: yarn test
