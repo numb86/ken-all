@@ -15,6 +15,7 @@
         "chore",
         "docs"
       ]
-    ]
+    ],
+    "body-max-line-length": [0]
   }
 }
