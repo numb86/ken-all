@@ -6,7 +6,7 @@ import readCsv from './readCsv';
 
 const fs = require('fs').promises;
 
-const CSV_OUTPUT_PATH = './docs/csv/';
+const CSV_OUTPUT_PATH = './postalCode/csv/';
 
 const createCsvContent = (addressList: Address[]): string => {
   let result = '';
