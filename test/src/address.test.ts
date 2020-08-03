@@ -1,10 +1,10 @@
+import assert from 'power-assert';
+
 import {
   generateAddressListFromText,
   extractTargetAddress,
   normalizeAddressList,
 } from '../../src/address';
-
-import assert = require('assert');
 
 type Address = [string, string, string, string];
 
