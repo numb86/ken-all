@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import generateAddressDictionary from '../../generateCsv/addressDictionary';
+import assert from 'power-assert';
 
-import assert = require('assert');
+import generateAddressDictionary from '../../generateCsv/addressDictionary';
 
 // eslint-disable-next-line no-useless-escape
 const RAW_DATA = `"01101,\"060  \",\"0600000\",\"ﾎｯｶｲﾄﾞｳ\",\"ｻｯﾎﾟﾛｼﾁｭｳｵｳｸ\",\"\",\"北海道\",\"札幌市中央区\",\"\",0,0,0,0,0,0\r\n01101,\"064  \",\"0640941\",\"ﾎｯｶｲﾄﾞｳ\",\"ｻｯﾎﾟﾛｼﾁｭｳｵｳｸ\",\"ｱｻﾋｶﾞｵｶ\",\"北海道\",\"札幌市中央区\",\"旭ケ丘\",0,0,1,0,0,0\r\n01101,\"060  \",\"0600041\",\"ﾎｯｶｲﾄﾞｳ\",\"ｻｯﾎﾟﾛｼﾁｭｳｵｳｸ\",\"ｵｵﾄﾞｵﾘﾋｶﾞｼ\",\"北海道\",\"札幌市中央区\",\"大通東\",0,0,1,0,0,0\r\n"`;

@@ -1,6 +1,6 @@
-import readCsv from '../../generateCsv/readCsv';
+import assert from 'power-assert';
 
-import assert = require('assert');
+import readCsv from '../../generateCsv/readCsv';
 
 describe('readCsv', (): void => {
   it('Shift-JIS 形式の CSV ファイルを読み込み、UTF-8 形式の文字列として返す', async (): Promise<
