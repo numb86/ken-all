@@ -39,7 +39,6 @@
       {"allowTypedFunctionExpressions": true}
     ],
     "@typescript-eslint/no-var-requires": "off",
-    "react/jsx-props-no-spreading": "off",
     "prettier/prettier": ["error", {
      "singleQuote": true,
      "trailingComma": "es5",
