@@ -79,5 +79,8 @@
     "es6-promise": "^4.2.8",
     "fetch-ponyfill": "^6.1.0",
     "typescript": "^3.8.2"
+  },
+  "resolutions": {
+    "terser-webpack-plugin": "^1.4.5"
   }
 }
