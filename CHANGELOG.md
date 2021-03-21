@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/numb86/ken-all/compare/v0.2.2...v0.2.3) (2021-03-21)
+
+
+### Dependencies
+
+* dependencies のバージョンアップを行う ([#60](https://github.com/numb86/ken-all/issues/60)) ([d2fc34a](https://github.com/numb86/ken-all/commit/d2fc34ac911adfa35b82be67bff00ae2d9cdb40b))
+
 ### [0.2.2](https://github.com/numb86/ken-all/compare/v0.2.1...v0.2.2) (2021-03-20)
 
 
