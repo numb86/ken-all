@@ -31,7 +31,7 @@
     "esm"
   ],
   "scripts": {
-    "build": "yarn && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.json",
+    "build": "yarn && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
     "lint": "run-p lint:*",
     "lint:src": "eslint './src/**/*.ts'",
     "lint:generateCsv": "eslint './generateCsv/**/*.ts'",
