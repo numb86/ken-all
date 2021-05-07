@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/numb86/ken-all/compare/v0.4.0...v0.4.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* 404 だけでなく 403 でも空の関数を返す ([#71](https://github.com/numb86/ken-all/issues/71)) ([3b52a5f](https://github.com/numb86/ken-all/commit/3b52a5f90bc82be58c4f78169a700ef400667d3a))
+
 ## [0.4.0](https://github.com/numb86/ken-all/compare/v0.3.0...v0.4.0) (2021-05-07)
 
 
