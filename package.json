@@ -42,7 +42,6 @@
     "lint:generateCsv": "eslint './generateCsv/**/*.ts'",
     "lint:test": "eslint './test/**/*.ts'",
     "test": "mocha --require espower-typescript/guess test/**/*.ts",
-    "example-test": "(yarn run build:cjs && cd example && yarn install --force && node normal.js && node promiseNotExistEnv.js)",
     "type-check": "run-p type-check:*",
     "type-check:src": "tsc src/*.ts --noEmit",
     "type-check:generateCsv": "tsc generateCsv/*.ts --noEmit",
