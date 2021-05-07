@@ -1,6 +1,5 @@
 /dist
 /esm
-/umd
 /node_modules
 /example/yarn.lock
 /example/node_modules
