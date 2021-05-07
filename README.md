@@ -214,8 +214,8 @@ import("ken-all").then((KenAll) => {
   <input id="post-code" maxlength="7">
   <p id="result"></p>
 
-  <script src="https://unpkg.com/ken-all@0.4.0/esm/index.js" type="module"></script>
   <script type="module">
+    import KenAll from "https://unpkg.com/ken-all@0.4.0/esm/index.js";
     const searchBoxElem = document.querySelector('#post-code');
 
     searchBoxElem.addEventListener('input', e => {
