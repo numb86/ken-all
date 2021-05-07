@@ -171,23 +171,37 @@ export default {
 
 ## Node.js
 
+Node.js には`fetch`が存在しないので、その対応が必要になります。  
+また、ES Modules で利用するか CommonJS で利用するかで、コードが変わります。  
+いずれも　Node.js のバージョン`12.22.1`で確認しています。
+
 ```js
-// Node.js のバージョン 12.10.0 で確認
-const Promise = require('es6-promise');
-const {fetch} = require('fetch-ponyfill')(Promise);
+// ESM
+import fetch from "node-fetch";
+import KenAll from "ken-all";
 
 global.fetch = fetch;
 
-const KenAll = require('ken-all').default;
+// [['東京都', '千代田区', '大手町']];
+KenAll("1000004").then((res) => console.log(res));
+```
 
-// [ [ '東京都', '千代田区', '永田町' ] ]
-KenAll('1000014').then(res => console.log(res));
+```javascript
+// CJS
+const fetch = require("node-fetch");
+
+global.fetch = fetch;
+
+import("ken-all").then((KenAll) => {
+  // [['東京都', '千代田区', '大手町']];
+  KenAll.default("1000004").then((res) => console.log(res));
+});
 ```
 
 ## script タグを使った読み込み
 
-`0.2.0`以降のバージョンは`https://unpkg.com/ken-all@{バージョン番号}/umd/index.js`で読み込めます。  
-読み込み後、`KenAll.default`という形で利用できます。
+`0.4.0`以降のバージョンは`https://unpkg.com/ken-all@{バージョン番号}/esm/index.js`で読み込めます。  
+読み込み後、`KenAll`という形で利用できます。
 
 ```html
 <!DOCTYPE html>
@@ -200,8 +214,8 @@ KenAll('1000014').then(res => console.log(res));
   <input id="post-code" maxlength="7">
   <p id="result"></p>
 
-  <script src="https://unpkg.com/ken-all@0.2.0/umd/index.js"></script>
-  <script>
+  <script src="https://unpkg.com/ken-all@0.4.0/esm/index.js" type="module"></script>
+  <script type="module">
     const searchBoxElem = document.querySelector('#post-code');
 
     searchBoxElem.addEventListener('input', e => {
@@ -209,7 +223,7 @@ KenAll('1000014').then(res => console.log(res));
 
       if (postCode.length === 7) {
         const resultTextElem = document.querySelector('#result');
-        KenAll.default(postCode).then(res => {
+        KenAll(postCode).then(res => {
           if (res.length === 0) {
             resultTextElem.textContent = '該当する住所はありません';
           } else {

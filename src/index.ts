@@ -1,10 +1,11 @@
+// To publish as an ESM package, need to use the .js extension
 import {
   generateAddressListFromText,
   extractTargetAddress,
   normalizeAddressList,
   NormalizedAddress,
-} from './address';
-import fetchCsv from './fetchCsv';
+} from './address.js';
+import fetchCsv from './fetchCsv.js';
 
 const KenAll = async (postCode: string): Promise<NormalizedAddress[]> => {
   if (typeof postCode !== 'string') {
