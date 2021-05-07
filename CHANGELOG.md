@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/numb86/ken-all/compare/v0.3.0...v0.4.0) (2021-05-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* esm 形式のみに対応し、umd 形式と cjs 形式は対応から外す (#70)
+
+### Features
+
+* esm 形式のみに対応し、umd 形式と cjs 形式は対応から外す ([#70](https://github.com/numb86/ken-all/issues/70)) ([88578d1](https://github.com/numb86/ken-all/commit/88578d1c3413c2a537b2dff6d805680f995bce71))
+
 ## [0.3.0](https://github.com/numb86/ken-all/compare/v0.2.3...v0.3.0) (2021-05-07)
 
 
