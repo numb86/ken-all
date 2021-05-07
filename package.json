@@ -26,6 +26,7 @@
   "license": "MIT",
   "main": "./esm/index.js",
   "module": "./esm/index.js",
+  "type": "module",
   "types": "./esm/index.d.ts",
   "files": [
     "esm"
