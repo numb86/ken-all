@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/numb86/ken-all/compare/v0.2.3...v0.3.0) (2021-05-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* ライブラリ側が fetch や Promise のポリフィルを用意するのを止める (#67)
+
+### Features
+
+* ライブラリ側が fetch や Promise のポリフィルを用意するのを止める ([#67](https://github.com/numb86/ken-all/issues/67)) ([e8e7c21](https://github.com/numb86/ken-all/commit/e8e7c2122a2774b04de8b5afa74fc1cc5c03b2a9))
+
+
+### Bug Fixes
+
+* cors を有効にする ([#69](https://github.com/numb86/ken-all/issues/69)) ([4dd930d](https://github.com/numb86/ken-all/commit/4dd930dbbdad224771e7376600ffc932d4c38f45))
+
 ### [0.2.3](https://github.com/numb86/ken-all/compare/v0.2.2...v0.2.3) (2021-03-21)
 
 
