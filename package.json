@@ -24,17 +24,14 @@
     "url": "https://github.com/numb86/ken-all.git"
   },
   "license": "MIT",
-  "main": "./dist/index.js",
+  "main": "./esm/index.js",
   "module": "./esm/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./esm/index.d.ts",
   "files": [
-    "dist",
     "esm"
   ],
   "scripts": {
-    "build": "yarn && run-p build:*",
-    "build:cjs": "mkdir -p ./dist && rm -rf dist/* && tsc -p ./tsconfig.cjs.json",
-    "build:esm": "mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
+    "build": "yarn && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.json",
     "lint": "run-p lint:*",
     "lint:src": "eslint './src/**/*.ts'",
     "lint:generateCsv": "eslint './generateCsv/**/*.ts'",

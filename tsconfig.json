@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "module": "es2020",
     "lib": ["es2018", "dom"],
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
     "skipLibCheck": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "./esm/"
   },
   "include": [
     "src"
