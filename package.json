@@ -24,7 +24,7 @@
     "url": "https://github.com/numb86/ken-all.git"
   },
   "license": "MIT",
-  "main": "./esm/index.js",
+  "exports": "./esm/index.js",
   "module": "./esm/index.js",
   "type": "module",
   "types": "./esm/index.d.ts",
