@@ -16,7 +16,7 @@ const KenAll = async (postCode: string): Promise<NormalizedAddress[]> => {
   }
 
   const res = await fetchCsv(postCode.slice(0, 3));
-  if (res.status === 404) {
+  if (res.status === 404 || res.status === 403) {
     return [];
   }
   if (res.status >= 400) {
