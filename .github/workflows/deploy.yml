@@ -43,9 +43,6 @@ jobs:
       - name: Type check
         run: yarn run type-check
 
-      - name: Example test
-        run: yarn run example-test
-
       - name: Commitlint
         run: yarn run commitlint
 
