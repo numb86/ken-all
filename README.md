@@ -63,6 +63,10 @@ KenAll('9009999').then(res => console.log(res));
 
 型定義ファイルも同梱しているので、TypeScript アプリでも利用することが出来ます。
 
+## 注意点
+
+内部で`fetch`を行っているので、`fetch`を使えない環境ではポリフィルが必要になります。
+
 # サンプル
 
 ＊以下のサンプルは、シンプルにするために複数の住所が返ってきたケースを考慮していません
@@ -169,6 +173,11 @@ export default {
 
 ```js
 // Node.js のバージョン 12.10.0 で確認
+const Promise = require('es6-promise');
+const {fetch} = require('fetch-ponyfill')(Promise);
+
+global.fetch = fetch;
+
 const KenAll = require('ken-all').default;
 
 // [ [ '東京都', '千代田区', '永田町' ] ]
