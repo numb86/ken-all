@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'postalCode/**'
+      - '.github/workflows/deploy.yml'
 
 jobs:
   deploy:
