@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'postalCode/**'
+      - '.github/workflows/deploy.yml'
 
 jobs:
   deploy:
@@ -21,7 +22,7 @@ jobs:
 
       - name: Get yarn cache
         id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
       - name: Cache dependencies
         uses: actions/cache@v1
