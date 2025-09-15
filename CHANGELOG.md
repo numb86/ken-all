@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](https://github.com/numb86/ken-all/compare/v0.4.1...v0.4.2) (2025-09-15)
+
+
+### Bug Fixes
+
+* 依存関係の指定を修正する ([#72](https://github.com/numb86/ken-all/issues/72)) ([bac4db8](https://github.com/numb86/ken-all/commit/bac4db88619dfe07f11f7c168e31c31b44956427))
+
 ### [0.4.1](https://github.com/numb86/ken-all/compare/v0.4.0...v0.4.1) (2021-05-07)
 
 
