@@ -63,6 +63,53 @@ describe('Ken All スモークテスト（本番環境）', () => {
     });
   });
 
+  describe('エラーハンドリング', () => {
+    test('文字を含む郵便番号はエラーをthrowする', async () => {
+      await assert.rejects(
+        () => KenAll('abc1234'),
+        {
+          name: 'Error',
+          message: 'The post code is always seven digits half-width numbers.'
+        }
+      );
+    });
+
+    test('桁数不足の郵便番号はエラーをthrowする', async () => {
+      await assert.rejects(
+        () => KenAll('123'),
+        {
+          name: 'Error',
+          message: 'The post code is always seven digits half-width numbers.'
+        }
+      );
+    });
+
+    test('桁数超過の郵便番号はエラーをthrowする', async () => {
+      await assert.rejects(
+        () => KenAll('12345678'),
+        {
+          name: 'Error',
+          message: 'The post code is always seven digits half-width numbers.'
+        }
+      );
+    });
+
+    test('全角数字の郵便番号はエラーをthrowする', async () => {
+      await assert.rejects(
+        () => KenAll('１２３４５６７'),
+        {
+          name: 'Error',
+          message: 'The post code is always seven digits half-width numbers.'
+        }
+      );
+    });
+
+    test('存在しないCSVファイル（999で始まる）は空配列を返す', async () => {
+      const result = await KenAll('9990000');
+      assert.deepEqual(result, []);
+    });
+  });
+
   describe('ネットワークとCDN', () => {
     test('CDNから高速にレスポンスが返る（1秒以内）', async () => {
       const start = Date.now();
