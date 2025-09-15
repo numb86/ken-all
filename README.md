@@ -172,8 +172,7 @@ export default {
 ## Node.js
 
 Node.js には`fetch`が存在しないので、その対応が必要になります。  
-また、ES Modules で利用するか CommonJS で利用するかで、コードが変わります。  
-いずれも　Node.js のバージョン`12.22.1`で確認しています。
+Node.js のバージョン`12.22.1`で確認しています。
 
 ```js
 // ESM
@@ -184,18 +183,6 @@ global.fetch = fetch;
 
 // [['東京都', '千代田区', '大手町']];
 KenAll("1000004").then((res) => console.log(res));
-```
-
-```javascript
-// CJS
-const fetch = require("node-fetch");
-
-global.fetch = fetch;
-
-import("ken-all").then((KenAll) => {
-  // [['東京都', '千代田区', '大手町']];
-  KenAll.default("1000004").then((res) => console.log(res));
-});
 ```
 
 ## script タグを使った読み込み
