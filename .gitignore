@@ -2,3 +2,7 @@
 /node_modules
 /example/yarn.lock
 /example/node_modules
+
+# Rust
+/generateCsvByRust/target
+/generateCsvByRust/Cargo.lock
