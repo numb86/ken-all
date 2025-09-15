@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Get yarn cache
         id: yarn-cache
@@ -32,8 +32,14 @@ jobs:
       - name: Library install
         run: yarn --frozen-lockfile
 
+      - name: Build package
+        run: yarn run build
+
       - name: Unit test
         run: yarn run test
+
+      - name: Smoke test
+        run: npm run test:smoke
 
       - name: Lint
         run: yarn run lint
