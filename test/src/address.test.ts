@@ -1,4 +1,5 @@
-import assert from 'power-assert';
+import { test, describe, beforeEach } from 'node:test';
+import * as assert from 'node:assert/strict';
 
 import {
   generateAddressListFromText,
@@ -24,7 +25,7 @@ describe('address', (): void => {
   });
 
   describe('generateAddressListFromText', (): void => {
-    it('複数行のテキストデータから Address のリストを作成する', (): void => {
+    test('複数行のテキストデータから Address のリストを作成する', (): void => {
       const result = generateAddressListFromText(RAW_DATE);
 
       assert.deepStrictEqual(result.length, 3);
@@ -46,7 +47,7 @@ describe('address', (): void => {
   });
 
   describe('extractTargetAddress', (): void => {
-    it('Address の先頭の要素をキーにして、Address のリストから該当するものを返す', (): void => {
+    test('Address の先頭の要素をキーにして、Address のリストから該当するものを返す', (): void => {
       let result = extractTargetAddress('0004', addressList);
       assert.deepStrictEqual(result.length, 1);
       assert.deepStrictEqual(result[0][3], '大手町');
@@ -61,14 +62,14 @@ describe('address', (): void => {
       assert.deepStrictEqual(result[1][1], '三重県');
     });
 
-    it('該当する Address がない場合は空の配列を返す', (): void => {
+    test('該当する Address がない場合は空の配列を返す', (): void => {
       const result = extractTargetAddress('0099', addressList);
       assert.deepStrictEqual(result.length, 0);
     });
   });
 
   describe('normalizeAddressList', (): void => {
-    it('渡された配列に入っている Address から、先頭の要素を削除する', (): void => {
+    test('渡された配列に入っている Address から、先頭の要素を削除する', (): void => {
       const result = normalizeAddressList(addressList);
 
       result.forEach((address: string[]): void => {
