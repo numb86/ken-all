@@ -36,7 +36,7 @@
     "lint:src": "eslint './src/**/*.ts'",
     "lint:generateCsv": "eslint './generateCsv/**/*.ts'",
     "lint:test": "eslint './test/**/*.ts'",
-    "test": "mocha --require espower-typescript/guess test/**/*.ts",
+    "test": "tsx --test test/**/*.test.ts",
     "test:smoke": "node --test test/smoke/smoke.test.js",
     "type-check": "run-p type-check:*",
     "type-check:src": "tsc src/*.ts --noEmit",
