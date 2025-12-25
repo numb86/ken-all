@@ -1,0 +1,11 @@
+{
+  "name": "ken-all-e2e-test",
+  "type": "module",
+  "scripts": {
+    "test": "npm i && playwright test",
+    "start": "npm i && npx vite --port 3000 --open"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
