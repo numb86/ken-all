@@ -9,62 +9,15 @@ on:
       - '.github/workflows/deploy.yml'
 
 jobs:
+  test:
+    uses: ./.github/workflows/pr.yml
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: 18
-
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Library install
-        run: yarn --frozen-lockfile
-
-      - name: Unit test
-        run: yarn run test
-
-      - name: Lint
-        run: yarn run lint
-
-      - name: Type check
-        run: yarn run type-check
-
-      - name: Commitlint
-        run: yarn run commitlint
-
-      - name: Setup Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
-        with:
-          toolchain: stable
-
-      - name: Verify CSV generation (TypeScript)
-        run: |
-          yarn run generate-csv
-          git diff --exit-code postalCode/csv/ || (echo "❌ TypeScript CSV generation created unexpected changes" && exit 1)
-          echo "✅ TypeScript CSV generation OK"
-
-      - name: Verify CSV generation (Rust)
-        run: |
-          cd generateCsvByRust
-          cargo run --release
-          cd ..
-          git diff --exit-code postalCode/csv/ || (echo "❌ Rust CSV generation differs from TypeScript" && exit 1)
-          echo "✅ Rust and TypeScript outputs match"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -76,6 +29,7 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync postalCode/ s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
-      - name:  Cache clear
+
+      - name: Cache clear
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'

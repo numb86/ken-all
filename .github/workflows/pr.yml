@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - master
+  workflow_call:
 
 jobs:
   test:
@@ -15,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Get yarn cache
         id: yarn-cache
