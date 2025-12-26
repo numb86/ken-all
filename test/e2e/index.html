@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form>
+    <input type="text" id="postal-code" placeholder="郵便番号">
+    <input type="text" id="prefecture" placeholder="都道府県">
+    <input type="text" id="city" placeholder="市区町村">
+    <input type="text" id="town" placeholder="町域">
+  </form>
+  <script type="module">
+    import KenAll from 'ken-all';
+
+    document.getElementById('postal-code').addEventListener('input', async (e) => {
+      const code = e.target.value;
+      if (code.length === 7) {
+        const result = await KenAll(code);
+        if (result.length > 0) {
+          const [prefecture, city, town] = result[0];
+          document.getElementById('prefecture').value = prefecture;
+          document.getElementById('city').value = city;
+          document.getElementById('town').value = town;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
