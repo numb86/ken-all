@@ -39,8 +39,11 @@ jobs:
       - name: Unit test
         run: yarn run test
 
-      - name: Smoke test
-        run: npm run test:smoke
+      - name: Install Playwright browsers
+        run: cd test/e2e && npx playwright install --with-deps chromium
+
+      - name: E2E test
+        run: make e2e-test
 
       - name: Lint
         run: yarn run lint
