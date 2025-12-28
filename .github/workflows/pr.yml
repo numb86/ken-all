@@ -59,15 +59,9 @@ jobs:
         with:
           toolchain: stable
 
-      - name: Verify CSV generation (TypeScript)
+      - name: Verify CSV generation
         run: |
-          yarn run generate-csv
-          git diff --exit-code postalCode/csv/ || (echo "❌ TypeScript CSV generation created unexpected changes" && exit 1)
-          echo "✅ TypeScript CSV generation OK"
-
-      - name: Verify CSV generation (Rust)
-        run: |
-          cd generateCsvByRust
+          cd generateCsv
           cargo run --release
           cd ..
           git diff --exit-code postalCode/csv/ || (echo "❌ Rust CSV generation differs from TypeScript" && exit 1)

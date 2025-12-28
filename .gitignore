@@ -4,8 +4,8 @@
 /example/node_modules
 
 # Rust
-/generateCsvByRust/target
-/generateCsvByRust/Cargo.lock
+/generateCsv/target
+/generateCsv/Cargo.lock
 
 # E2E test
 /test/e2e/node_modules

@@ -1,19 +1,19 @@
+use encoding_rs::SHIFT_JIS;
+use std::collections::HashMap;
 use std::fs;
 use std::io::Write;
-use std::collections::HashMap;
-use encoding_rs::SHIFT_JIS;
 
 #[derive(Debug)]
 struct Address {
-    post_code_back: String,  // 郵便番号の下4桁
-    prefecture: String,      // 都道府県
+    post_code_back: String, // 郵便番号の下4桁
+    prefecture: String,     // 都道府県
     city: String,           // 市区町村
     town: String,           // 町域
 }
 
 fn main() {
     // マスターデータのパスを指定
-    let path = "../generateCsv/master-data.csv";
+    let path = "./master-data.csv";
 
     // ファイルを読み込み
     match fs::read(path) {
@@ -46,8 +46,8 @@ fn main() {
                         // 7列目: 市区町村
                         // 8列目: 町域
                         if let (Some(post_code), Some(prefecture), Some(city), Some(town)) =
-                            (record.get(2), record.get(6), record.get(7), record.get(8)) {
-
+                            (record.get(2), record.get(6), record.get(7), record.get(8))
+                        {
                             // 郵便番号を上3桁と下4桁に分割
                             let post_code_clean = post_code.replace("\"", "");
                             if post_code_clean.len() == 7 {
@@ -62,7 +62,8 @@ fn main() {
                                 };
 
                                 // 上3桁をキーとしてグループに追加
-                                dictionary.entry(post_code_front.to_string())
+                                dictionary
+                                    .entry(post_code_front.to_string())
                                     .or_insert_with(Vec::new)
                                     .push(address);
                             }
@@ -97,10 +98,7 @@ fn main() {
                     // TypeScript版と同じ形式で出力："下4桁","都道府県","市区町村","町域"
                     csv_content.push_str(&format!(
                         "\"{}\",\"{}\",\"{}\",\"{}\"\n",
-                        addr.post_code_back,
-                        addr.prefecture,
-                        addr.city,
-                        addr.town
+                        addr.post_code_back, addr.prefecture, addr.city, addr.town
                     ));
                 }
 
@@ -112,7 +110,11 @@ fn main() {
                                 success_count += 1;
                                 // 進捗表示（100ファイルごと）
                                 if success_count % 100 == 0 {
-                                    println!("  {} / {} ファイル出力完了", success_count, dictionary.len());
+                                    println!(
+                                        "  {} / {} ファイル出力完了",
+                                        success_count,
+                                        dictionary.len()
+                                    );
                                 }
                             }
                             Err(e) => {
