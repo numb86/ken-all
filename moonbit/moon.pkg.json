@@ -1,0 +1,8 @@
+{
+  "link": {
+    "js": {
+      "exports": ["search:default"],
+      "format": "esm"
+    }
+  }
+}
