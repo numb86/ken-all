@@ -10,19 +10,36 @@
     <input type="text" id="city" placeholder="市区町村">
     <input type="text" id="town" placeholder="町域">
   </form>
+  <div id="error"></div>
+  <ul id="address-list"></ul>
   <script type="module">
     import KenAll from 'ken-all';
 
     document.getElementById('postal-code').addEventListener('input', async (e) => {
       const code = e.target.value;
-      if (code.length === 7) {
+      const addressList = document.getElementById('address-list');
+      const errorDiv = document.getElementById('error');
+      addressList.innerHTML = '';
+      errorDiv.textContent = '';
+
+      try {
         const result = await KenAll(code);
         if (result.length > 0) {
           const [prefecture, city, town] = result[0];
           document.getElementById('prefecture').value = prefecture;
           document.getElementById('city').value = city;
           document.getElementById('town').value = town;
+
+          result.forEach(([pref, city, town]) => {
+            const li = document.createElement('li');
+            li.className = 'address-item';
+            li.dataset.prefecture = pref;
+            li.textContent = `${pref} ${city} ${town}`;
+            addressList.appendChild(li);
+          });
         }
+      } catch (err) {
+        errorDiv.textContent = err.message;
       }
     });
   </script>
