@@ -44,8 +44,8 @@
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9.1.1",
-    "@commitlint/config-conventional": "10",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "20",
     "@types/node": "^24.5.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
