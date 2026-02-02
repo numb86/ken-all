@@ -34,8 +34,7 @@
     "build": "yarn && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
     "lint": "oxlint src test",
     "test": "tsx --test test/**/*.test.ts",
-    "type-check": "run-p type-check:*",
-    "type-check:src": "tsc src/*.ts --noEmit",
+    "type-check": "tsc src/*.ts --noEmit",
     "release": "standard-version",
     "commitlint": "git describe --abbrev=0 --tags | xargs -I@ commitlint --from=@",
     "prepublishOnly": "yarn run build"
@@ -44,7 +43,6 @@
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "10",
     "@types/node": "^24.5.0",
-    "npm-run-all": "^4.1.5",
     "oxlint": "^1.43.0",
     "prettier": "^2.2.1",
     "standard-version": "^9.0.0",
