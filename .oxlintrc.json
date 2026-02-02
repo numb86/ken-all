@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": ["**/node_modules"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "typescript/explicit-function-return-type": [
+      "warn",
+      { "allowTypedFunctionExpressions": true }
+    ]
+  }
+}
