@@ -39,8 +39,8 @@
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9.1.1",
-    "@commitlint/config-conventional": "10",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "20",
     "@types/node": "^24.5.0",
     "oxlint": "^1.43.0",
     "prettier": "^2.2.1",
