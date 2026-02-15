@@ -2,6 +2,7 @@
   "packages": {
     ".": {
       "release-type": "node",
+      "last-release-sha": "54cca0c66d94b876ddcbf3d0da28291ede6be83e",
       "changelog-sections": [
         { "type": "feat", "section": "Features" },
         { "type": "fix", "section": "Bug Fixes" },
