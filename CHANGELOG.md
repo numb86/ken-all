@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/numb86/ken-all/compare/v0.4.2...v0.4.3) (2026-02-15)
+
+
+### Dependencies
+
+* ts-node を tsx に置き換える ([#170](https://github.com/numb86/ken-all/issues/170)) ([1fcb329](https://github.com/numb86/ken-all/commit/1fcb3297683ab4c61b1fad39e395a19a32e981b8))
+
 ### [0.4.2](https://github.com/numb86/ken-all/compare/v0.4.1...v0.4.2) (2025-09-15)
 
 
