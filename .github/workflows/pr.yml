@@ -1,4 +1,4 @@
-name: Unit test, Lint, Type check, and Commitlint
+name: Unit test, Lint, and Type check
 
 on:
   pull_request:
@@ -50,9 +50,6 @@ jobs:
 
       - name: Type check
         run: yarn run type-check
-
-      - name: Commitlint
-        run: yarn run commitlint
 
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1

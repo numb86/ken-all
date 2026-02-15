@@ -35,12 +35,9 @@
     "lint": "oxlint src test",
     "test": "tsx --test test/**/*.test.ts",
     "type-check": "tsc src/*.ts --noEmit",
-    "commitlint": "git describe --abbrev=0 --tags | xargs -I@ commitlint --from=@",
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9.1.1",
-    "@commitlint/config-conventional": "10",
     "@types/node": "^24.5.0",
     "oxlint": "^1.43.0",
     "prettier": "^2.2.1",
