@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.0.0](https://github.com/numb86/ken-all/compare/ken-all-v0.4.2...ken-all-v1.0.0) (2026-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* esm 形式のみに対応し、umd 形式と cjs 形式は対応から外す ([#70](https://github.com/numb86/ken-all/issues/70))
+* ライブラリ側が fetch や Promise のポリフィルを用意するのを止める ([#67](https://github.com/numb86/ken-all/issues/67))
+
+### Features
+
+* esm 形式のみに対応し、umd 形式と cjs 形式は対応から外す ([#70](https://github.com/numb86/ken-all/issues/70)) ([88578d1](https://github.com/numb86/ken-all/commit/88578d1c3413c2a537b2dff6d805680f995bce71))
+* esmodules 形式と umd 形式に対応する ([#13](https://github.com/numb86/ken-all/issues/13)) ([1ac60cb](https://github.com/numb86/ken-all/commit/1ac60cbb8cdcaeb2136d0d84daf0d69ccfa84ce0))
+* ライブラリ側が fetch や Promise のポリフィルを用意するのを止める ([#67](https://github.com/numb86/ken-all/issues/67)) ([e8e7c21](https://github.com/numb86/ken-all/commit/e8e7c2122a2774b04de8b5afa74fc1cc5c03b2a9))
+
+
+### Bug Fixes
+
+* 404 だけでなく 403 でも空の関数を返す ([#71](https://github.com/numb86/ken-all/issues/71)) ([3b52a5f](https://github.com/numb86/ken-all/commit/3b52a5f90bc82be58c4f78169a700ef400667d3a))
+* cors を有効にする ([#69](https://github.com/numb86/ken-all/issues/69)) ([4dd930d](https://github.com/numb86/ken-all/commit/4dd930dbbdad224771e7376600ffc932d4c38f45))
+* global.Promise の上書きは必要な時のみ行う ([#58](https://github.com/numb86/ken-all/issues/58)) ([310d63e](https://github.com/numb86/ken-all/commit/310d63e6507e1deff3b7bb0d9f5d005050f54c8c))
+* 依存関係の指定を修正する ([#72](https://github.com/numb86/ken-all/issues/72)) ([bac4db8](https://github.com/numb86/ken-all/commit/bac4db88619dfe07f11f7c168e31c31b44956427))
+
+
+### Dependencies
+
+* dependencies のバージョンアップを行う ([#60](https://github.com/numb86/ken-all/issues/60)) ([d2fc34a](https://github.com/numb86/ken-all/commit/d2fc34ac911adfa35b82be67bff00ae2d9cdb40b))
+* ts-node を tsx に置き換える ([#170](https://github.com/numb86/ken-all/issues/170)) ([1fcb329](https://github.com/numb86/ken-all/commit/1fcb3297683ab4c61b1fad39e395a19a32e981b8))
+* 依存パッケージのバージョンを上げる ([#11](https://github.com/numb86/ken-all/issues/11)) ([e97f677](https://github.com/numb86/ken-all/commit/e97f677468b6c244e54040f644049a9abc858650))
+* 依存パッケージのバージョンを上げる ([#25](https://github.com/numb86/ken-all/issues/25)) ([31458b8](https://github.com/numb86/ken-all/commit/31458b825a1a41bb1dd1f7e76f6df29fe151dd3a))
+* 依存パッケージのバージョンを上げる ([#3](https://github.com/numb86/ken-all/issues/3)) ([dbe8879](https://github.com/numb86/ken-all/commit/dbe887953eae006d76a58e389983a82f28b319ed))
+
 ### [0.4.2](https://github.com/numb86/ken-all/compare/v0.4.1...v0.4.2) (2025-09-15)
 
 
