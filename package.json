@@ -34,7 +34,7 @@
     "build": "yarn && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
     "lint": "oxlint src test",
     "test": "tsx --test test/**/*.test.ts",
-    "type-check": "tsc src/*.ts --noEmit",
+    "type-check": "tsc --noEmit",
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
@@ -42,6 +42,6 @@
     "oxlint": "^1.43.0",
     "prettier": "^3.0.0",
     "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "typescript": "^6.0.2"
   }
 }
