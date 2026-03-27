@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
+    "rootDir": "./src",
     "lib": ["es2018", "dom"],
     "strict": true,
     "esModuleInterop": true,
