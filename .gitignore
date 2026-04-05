@@ -1,7 +1,5 @@
 /esm
 /node_modules
-/example/yarn.lock
-/example/node_modules
 
 # Rust
 /generateCsv/target
