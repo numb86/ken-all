@@ -6,10 +6,11 @@
     "npm": ">=10"
   },
   "scripts": {
-    "test": "npm i && playwright test",
-    "start": "npm i && npx vite --port 3000 --open"
+    "test": "playwright test",
+    "start": "npx vite --port 3000 --open"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.0"
+    "@playwright/test": "1.58.2",
+    "vite": "6.4.1"
   }
 }
