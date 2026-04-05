@@ -18,26 +18,22 @@ jobs:
         with:
           node-version: 24
 
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
       - name: Cache dependencies
         uses: actions/cache@v5
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-npm-
 
       - name: Library install
-        run: yarn --frozen-lockfile
+        run: npm ci
 
       - name: Build package
-        run: yarn run build
+        run: npm run build
 
       - name: Unit test
-        run: yarn run test
+        run: npm run test
 
       - name: Install Playwright browsers
         run: cd test/e2e && npx playwright install --with-deps chromium
@@ -46,10 +42,10 @@ jobs:
         run: make e2e-test
 
       - name: Lint
-        run: yarn run lint
+        run: npm run lint
 
       - name: Type check
-        run: yarn run type-check
+        run: npm run type-check
 
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1

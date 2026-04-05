@@ -1,5 +1,5 @@
 build:
-	yarn build
+	npm run build
 
 e2e-test: build
 	rm -f ken-all-*.tgz

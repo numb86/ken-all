@@ -8,8 +8,7 @@
     "ken-all"
   ],
   "engines": {
-    "node": ">=12.22.2",
-    "yarn": ">=1.19.0"
+    "node": ">=12.22.2"
   },
   "homepage": "https://github.com/numb86/ken-all",
   "bugs": {
@@ -31,11 +30,11 @@
     "esm"
   ],
   "scripts": {
-    "build": "yarn && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
+    "build": "npm install && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
     "lint": "oxlint src test",
     "test": "tsx --test test/**/*.test.ts",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^24.5.0",
