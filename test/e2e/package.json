@@ -1,6 +1,10 @@
 {
   "name": "ken-all-e2e-test",
   "type": "module",
+  "engines": {
+    "node": ">=24",
+    "npm": ">=10"
+  },
   "scripts": {
     "test": "npm i && playwright test",
     "start": "npm i && npx vite --port 3000 --open"
