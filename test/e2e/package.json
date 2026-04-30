@@ -10,7 +10,7 @@
     "start": "npx vite --port 3000 --open"
   },
   "devDependencies": {
-    "@playwright/test": "1.58.2",
+    "@playwright/test": "1.59.1",
     "vite": "6.4.2"
   }
 }
