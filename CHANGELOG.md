@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/numb86/ken-all/compare/v0.4.2...v0.4.3) (2026-05-03)
+
+
+### Build
+
+* yarn v1 から npm に移行する ([#235](https://github.com/numb86/ken-all/issues/235)) ([a3a5092](https://github.com/numb86/ken-all/commit/a3a50921f88ef6c878de0e8d3cab3f28d669b423))
+* ビルドに使っている TypeScript のバージョンを 6 にする ([#228](https://github.com/numb86/ken-all/issues/228)) ([0e9d322](https://github.com/numb86/ken-all/commit/0e9d3225baaa8dae46d8120b11b2a2906f432a7c))
+
 ### [0.4.2](https://github.com/numb86/ken-all/compare/v0.4.1...v0.4.2) (2025-09-15)
 
 
