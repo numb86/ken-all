@@ -41,6 +41,6 @@
     "oxlint": "^1.43.0",
     "prettier": "^3.0.0",
     "tsx": "^4.20.5",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   }
 }
