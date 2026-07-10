@@ -8,7 +8,7 @@
     "ken-all"
   ],
   "engines": {
-    "node": ">=12.22.2"
+    "node": ">=18"
   },
   "homepage": "https://github.com/numb86/ken-all",
   "bugs": {

@@ -171,15 +171,10 @@ export default {
 
 ## Node.js
 
-Node.js には`fetch`が存在しないので、その対応が必要になります。  
-Node.js のバージョン`12.22.1`で確認しています。
+Node.js 18 以降ではグローバルに`fetch`が存在するので、そのまま利用できます。
 
 ```js
-// ESM
-import fetch from "node-fetch";
 import KenAll from "ken-all";
-
-global.fetch = fetch;
 
 // [['東京都', '千代田区', '大手町']];
 KenAll("1000004").then((res) => console.log(res));
