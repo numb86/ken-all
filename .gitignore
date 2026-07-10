@@ -3,7 +3,6 @@
 
 # Rust
 /generateCsv/target
-/generateCsv/Cargo.lock
 
 # E2E test
 /test/e2e/node_modules
