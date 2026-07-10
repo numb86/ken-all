@@ -7,7 +7,6 @@
     "esModuleInterop": true,
     "declaration": true,
     "skipLibCheck": true,
-    "sourceMap": true,
     "outDir": "./esm/"
   },
   "include": [
