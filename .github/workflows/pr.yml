@@ -17,14 +17,8 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
-
-      - name: Cache dependencies
-        uses: actions/cache@v6
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
+          cache: npm
+          cache-dependency-path: '**/package-lock.json'
 
       - name: Library install
         run: npm ci
