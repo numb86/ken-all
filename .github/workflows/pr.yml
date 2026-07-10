@@ -48,5 +48,5 @@ jobs:
           cd generateCsv
           cargo run --release
           cd ..
-          git diff --exit-code postalCode/csv/ || (echo "❌ Rust CSV generation differs from TypeScript" && exit 1)
-          echo "✅ Rust and TypeScript outputs match"
+          git diff --exit-code postalCode/csv/ || (echo "❌ Generated CSV differs from committed postalCode/csv/" && exit 1)
+          echo "✅ Generated CSV matches committed postalCode/csv/"
