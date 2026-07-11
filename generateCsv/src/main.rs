@@ -86,6 +86,18 @@ fn main() {
             println!("\n全CSVファイルを出力中...");
             let output_dir = "../postalCode/csv";
 
+            // マスターデータから消えた上3桁のファイルが残らないよう、既存のCSVを先に削除する
+            if let Ok(entries) = fs::read_dir(output_dir) {
+                for entry in entries.flatten() {
+                    let path = entry.path();
+                    if path.extension().is_some_and(|e| e == "csv") {
+                        if let Err(e) = fs::remove_file(&path) {
+                            eprintln!("  ✗ 既存ファイル削除エラー ({}): {}", path.display(), e);
+                        }
+                    }
+                }
+            }
+
             let mut success_count = 0;
             let mut error_count = 0;
 
