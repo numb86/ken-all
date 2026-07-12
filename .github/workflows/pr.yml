@@ -48,5 +48,23 @@ jobs:
           cd generateCsv
           cargo run --release
           cd ..
-          git diff --exit-code postalCode/csv/ || (echo "❌ Generated CSV differs from committed postalCode/csv/" && exit 1)
+          if [ -n "$(git status --porcelain postalCode/csv/)" ]; then
+            git status --porcelain postalCode/csv/
+            git diff postalCode/csv/
+            echo "❌ Generated CSV differs from committed postalCode/csv/"
+            exit 1
+          fi
           echo "✅ Generated CSV matches committed postalCode/csv/"
+
+      - name: Verify CSV generation (Japan Post data)
+        run: |
+          cd generateCsvFromJapanPost
+          cargo run --release
+          cd ..
+          if [ -n "$(git status --porcelain postalCode/csv/)" ]; then
+            git status --porcelain postalCode/csv/
+            git diff postalCode/csv/
+            echo "❌ Japan Post pipeline output differs from committed postalCode/csv/"
+            exit 1
+          fi
+          echo "✅ Japan Post pipeline output matches committed postalCode/csv/"
