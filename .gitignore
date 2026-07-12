@@ -3,6 +3,7 @@
 
 # Rust
 /generateCsv/target
+/generateCsvFromJapanPost/target
 
 # E2E test
 /test/e2e/node_modules

@@ -20,6 +20,9 @@ e2e-serve: build
 generate-csv:
 	cd generateCsv && cargo run --release
 
+generate-csv-from-japan-post:
+	cd generateCsvFromJapanPost && cargo run --release
+
 # リリース後の動作確認。master ブランチのリリースコミット上で実行すること。そうでないと「レジストリ版と手元ビルドの一致確認」で失敗する。
 # VERSION 未指定なら package.json の version を使う（make verify-release VERSION=0.4.2 のように指定も可能）
 VERSION ?= $(shell node -p "require('./package.json').version")
