@@ -36,6 +36,10 @@ fn main() {
             // 郵便番号の上3桁でグループ化するためのHashMap
             let mut dictionary: HashMap<String, Vec<Address>> = HashMap::new();
 
+            // クライアント（src/address.ts）は split(',') と " の全除去で CSV を解析するため、
+            // フィールドに , と " が含まれないことがこの形式の前提。違反を数えて最後に異常終了させる
+            let mut invalid_field_count = 0;
+
             // 各行を処理
             for result in reader.records() {
                 match result {
@@ -48,6 +52,22 @@ fn main() {
                         if let (Some(post_code), Some(prefecture), Some(city), Some(town)) =
                             (record.get(2), record.get(6), record.get(7), record.get(8))
                         {
+                            // フィールド検査（replace で " が消える前の生の値に対して行う）
+                            for (name, value) in [
+                                ("郵便番号", post_code),
+                                ("都道府県", prefecture),
+                                ("市区町村", city),
+                                ("町域", town),
+                            ] {
+                                if value.contains(',') || value.contains('"') {
+                                    eprintln!(
+                                        "✗ {} に , または \" が含まれています: {}",
+                                        name, value
+                                    );
+                                    invalid_field_count += 1;
+                                }
+                            }
+
                             // 郵便番号を上3桁と下4桁に分割
                             let post_code_clean = post_code.replace("\"", "");
                             if post_code_clean.len() == 7 {
@@ -73,6 +93,15 @@ fn main() {
                         eprintln!("CSV解析エラー: {}", e);
                     }
                 }
+            }
+
+            // フィールド検査に違反があれば、CSV を出力せずに異常終了する
+            if invalid_field_count > 0 {
+                eprintln!(
+                    "\nフィールド検査エラー: {} 件。CSV を出力せずに終了します",
+                    invalid_field_count
+                );
+                std::process::exit(1);
             }
 
             println!("\n解析完了:");
