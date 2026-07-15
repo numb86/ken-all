@@ -5,12 +5,35 @@ on:
     branches:
       - master
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
     steps:
       - uses: googleapis/release-please-action@v5
+        id: release
+
+  publish:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    environment: npm-publish
+    permissions:
+      id-token: write # trusted publishing の OIDC トークン発行に必要
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      # trusted publishing には npm 11.5.1 以上が必要。Node 24 同梱の npm (11.x) で足りる
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      # prepublishOnly が npm ci とビルドを実行する。認証は OIDC（トークン設定なし）
+      - name: Publish to npm
+        run: npm publish
