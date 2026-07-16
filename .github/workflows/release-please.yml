@@ -16,6 +16,10 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v5
         id: release
+        with:
+          # GITHUB_TOKEN だと PR の作成・更新がワークフローを起動できず、
+          # 必須チェックが Waiting のままになるため、fine-grained PAT を使う
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
 
   publish:
     needs: release-please
