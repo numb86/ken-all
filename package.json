@@ -33,8 +33,7 @@
     "build": "npm ci && mkdir -p ./esm && rm -rf esm/* && tsc -p ./tsconfig.esm.json",
     "lint": "oxlint src test",
     "test": "tsx --test test/**/*.test.ts",
-    "type-check": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^24.5.0",

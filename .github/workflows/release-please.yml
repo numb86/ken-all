@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: 24
 
-      # .npmrc の ignore-scripts=true により prepublishOnly は実行されないため、明示的にビルドする
+      # publish はビルドを自動では行わない（ignore-scripts=true のため publish 時のフックは動かない）
       - name: Build
         run: npm run build
 
