@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/numb86/ken-all/compare/v0.5.0...v0.5.1) (2026-07-16)
+
+
+### Bug Fixes
+
+* 配布パッケージに esm/ が含まれない問題を修正する ([#299](https://github.com/numb86/ken-all/issues/299)) ([37d2d82](https://github.com/numb86/ken-all/commit/37d2d82fc75a895911f31aa3f21a0912cdc71b89))
+
 ## [0.5.0](https://github.com/numb86/ken-all/compare/v0.4.2...v0.5.0) (2026-07-16)
 
 
