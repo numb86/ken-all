@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.5.0](https://github.com/numb86/ken-all/compare/v0.4.2...v0.5.0) (2026-07-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* サポートする Node.js を 18 以上に変更する ([#283](https://github.com/numb86/ken-all/issues/283))
+
+### Features
+
+* サポートする Node.js を 18 以上に変更する ([#283](https://github.com/numb86/ken-all/issues/283)) ([13627d5](https://github.com/numb86/ken-all/commit/13627d56a23240fb108390a2102ff549b0188630))
+
+
+### Build
+
+* **deps:** update dependency typescript to v7 ([#296](https://github.com/numb86/ken-all/issues/296)) ([dd85cd7](https://github.com/numb86/ken-all/commit/dd85cd70bc81f88ba129fda9d010318458cabd9c))
+* yarn v1 から npm に移行する ([#235](https://github.com/numb86/ken-all/issues/235)) ([a3a5092](https://github.com/numb86/ken-all/commit/a3a50921f88ef6c878de0e8d3cab3f28d669b423))
+* コンパイルターゲットを es2020 に上げて配布コードのサイズを削減する ([#286](https://github.com/numb86/ken-all/issues/286)) ([b7b5b70](https://github.com/numb86/ken-all/commit/b7b5b70b50aeb92d406f9ca45fb6e332400f2187))
+* ビルドに使っている TypeScript のバージョンを 6 にする ([#228](https://github.com/numb86/ken-all/issues/228)) ([0e9d322](https://github.com/numb86/ken-all/commit/0e9d3225baaa8dae46d8120b11b2a2906f432a7c))
+* 配布パッケージから source map を除外する ([#285](https://github.com/numb86/ken-all/issues/285)) ([d00f3e8](https://github.com/numb86/ken-all/commit/d00f3e898058816f3886a3b7f84de559bff1baa1))
+
 ### [0.4.2](https://github.com/numb86/ken-all/compare/v0.4.1...v0.4.2) (2025-09-15)
 
 
