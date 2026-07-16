@@ -38,6 +38,14 @@ jobs:
         with:
           node-version: 24
 
-      # prepublishOnly が npm ci とビルドを実行する。認証は OIDC（トークン設定なし）
+      # .npmrc の ignore-scripts=true により prepublishOnly は実行されないため、明示的にビルドする
+      - name: Build
+        run: npm run build
+
+      # 空パッケージの公開を防ぐ。ビルド成果物がなければここで止まる
+      - name: Check build output
+        run: test -f esm/index.js && test -f esm/index.d.ts
+
+      # 認証は OIDC（トークン設定なし）
       - name: Publish to npm
         run: npm publish
